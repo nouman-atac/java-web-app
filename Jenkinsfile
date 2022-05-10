@@ -1,11 +1,11 @@
 pipeline {
-  agent { label 'linux' }
+  
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   
   parameters { 
-    string(name: 'APP_NAME', defaultValue: '', description: 'What is the Heroku app name?') 
+    string(name: 'web-app', defaultValue: '', description: 'What is the Heroku app name?') 
   }
   stages {
     stage('Build') {
